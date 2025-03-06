@@ -41,7 +41,7 @@ export default function Home() {
   
   createStudioEditor({
     root: '#studio-editor',
-    licenseKey: '68b983ed4c974400957bc5cd860c662bf8b62bf2c7cd4b558e7ce6c4274df4fe',
+    licenseKey: '9288b413eb9f40728a30256f2502f00260929631643e4d7b8eac2c36bf132450',
     theme: 'light',
     project: {
       type: 'web',
@@ -78,7 +78,7 @@ export default function Home() {
         <GrapesJsStudio
           onReady={onReady}
           options={{
-            licenseKey: '68b983ed4c974400957bc5cd860c662bf8b62bf2c7cd4b558e7ce6c4274df4fe',
+            licenseKey: '9288b413eb9f40728a30256f2502f00260929631643e4d7b8eac2c36bf132450',
             project: {
               default: {
                 pages: [
