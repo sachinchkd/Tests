@@ -83,23 +83,10 @@ export default function Home() {
       
       <div className="flex-1 w-full overflow-hidden relative">
         <StudioEditor
-          options={{
-          licenseKey: '6474dfcb44a5452ebe4c66054bd3790ae34d0299a5d2435da48a8f4b1fd6ff99',
-          theme: 'dark',
-          identity: {
-            // TODO: replace with a unique id for your end users. e.g. an uuid
-            id: 'UNIQUE_END_USER_ID'
-          },
-          assets: {
-            storageType: 'cloud'
-          },
-          storage: {
-            type: 'cloud',
-            autosaveChanges: 100,
-            autosaveIntervalMs: 10000
-          },
-            project: {
-                      
+            options={{
+              licenseKey: '6474dfcb44a5452ebe4c66054bd3790ae34d0299a5d2435da48a8f4b1fd6ff99',
+              theme: 'dark',
+              project: {
                 type: 'web',
                 // TODO: replace with a unique id for your projects. e.g. an uuid
                 id: 'UNIQUE_PROJECT_ID'
@@ -116,21 +103,8 @@ export default function Home() {
                 autosaveChanges: 100,
                 autosaveIntervalMs: 10000
               }
-            ,
-            identity: {
-              // TODO: replace with a unique id for your end users. e.g. an uuid
-              id: 'UNIQUE_END_USER_ID'
-            },
-            assets: {
-              storageType: 'cloud'
-            },
-            storage: {
-              type: 'cloud',
-              autosaveChanges: 100,
-              autosaveIntervalMs: 10000
-            }
-          }}
-        />
+            }}
+          />
       </div>
     </main>
   );
