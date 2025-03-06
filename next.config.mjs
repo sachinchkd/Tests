@@ -6,6 +6,9 @@ const nextConfig = {
     // Use only transpilePackages and remove serverExternalPackages
     transpilePackages: ['@grapesjs/studio-sdk'],
     
+   
+    compiler: { removeConsole: false }, // Keep console logs
+
     // Add additional optimizations
     swcMinify: false, // Disable minification if it causes problems
     
