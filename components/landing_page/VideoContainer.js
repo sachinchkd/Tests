@@ -6,7 +6,6 @@ import GrapesJsStudio, {
 } from '@grapesjs/studio-sdk/react';
 import { useState } from 'react';
 
-import '@grapesjs/studio-sdk/style';
 
 
 
