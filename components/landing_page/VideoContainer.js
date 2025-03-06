@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import GrapesJsStudio, {
   StudioCommands,
@@ -6,11 +6,10 @@ import GrapesJsStudio, {
 } from '@grapesjs/studio-sdk/react';
 import { useState } from 'react';
 
-
-
+import '@grapesjs/studio-sdk/style';
 
 export default function Home() {
-  const [editor, setEditor] = useState(null);
+  const [editor, setEditor] = useState();
 
   const onReady = (editor) => {
     console.log('Editor loaded', editor);
