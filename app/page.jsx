@@ -54,7 +54,7 @@ export default function Home() {
       <Header />
       <main className="flex h-screen flex-col justify-between p-5 gap-2">
       <div className="p-1 flex gap-5">
-        <div className="font-bold">SDK example Next.js</div>
+        <div className="font-bold">WEBHUB Studio</div>
         <button className="border rounded px-2" onClick={getProjetData}>
           Log Project Data
         </button>
