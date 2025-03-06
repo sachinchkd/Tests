@@ -88,7 +88,7 @@ export default function Home() {
         <GrapesJsStudio
           onReady={onReady}
           options={{
-            licenseKey: '25603078c3f74b04a77a56021154bbe0b622640198374f838ead19b4b7b1336b',
+            licenseKey: '6474dfcb44a5452ebe4c66054bd3790ae34d0299a5d2435da48a8f4b1fd6ff99',
             project: {
               default: {
                 pages: [
