@@ -54,7 +54,7 @@ export default function Home() {
       <Header />
       <main className="flex h-screen flex-col justify-between p-5 gap-2">
       <div className="p-1 flex gap-5">
-        <div className="font-bold">WEBHUB Studio</div>
+        <div className="font-bold">SDK example Next.js</div>
         <button className="border rounded px-2" onClick={getProjetData}>
           Log Project Data
         </button>
@@ -66,7 +66,7 @@ export default function Home() {
         <GrapesJsStudio
           onReady={onReady}
           options={{
-            licenseKey: '9288b413eb9f40728a30256f2502f00260929631643e4d7b8eac2c36bf132450',
+            licenseKey: '68b983ed4c974400957bc5cd860c662bf8b62bf2c7cd4b558e7ce6c4274df4fe',
             project: {
               default: {
                 pages: [
