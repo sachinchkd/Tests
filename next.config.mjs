@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-  webpack: (config) => {
-    return config;
-  },
-  // You might need to add transpilePackages
-  transpilePackages: ['@grapesjs/studio-sdk'],
-};
-
+    transpilePackages: ['@grapesjs/studio-sdk'],
+    webpack: (config) => {
+      // Resolve potential issues with React being imported multiple times
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        react: require.resolve('react'),
+        'react-dom': require.resolve('react-dom')
+      };
+      return config;
+    }
+  };
 export default nextConfig;

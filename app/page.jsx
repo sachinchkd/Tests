@@ -1,7 +1,8 @@
+// page.jsx
 "use client";
 
-import '@grapesjs/studio-sdk/style';
-import dynamic from 'next/dynamic';
+import { StudioCommands, ToastVariant } from '@grapesjs/studio-sdk/react';
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import Container from "../components/landing_page/Container";
 import Footer from "../components/landing_page/Footer";
@@ -10,20 +11,15 @@ import Navbar from "../components/landing_page/Navbar";
 import SecondContainer from "../components/landing_page/SecondContainer";
 import Videocontainer from "../components/landing_page/VideoContainer";
 
-const GrapesJsStudio = dynamic(
-  () => import('@grapesjs/studio-sdk/react').then((mod) => mod.default),
-  { ssr: false }
-);
-
-
-
+// Dynamically import the editor with no SSR
+const GrapesJsEditor = dynamic(() => import('../components/GrapeJsEditor'), {
+  ssr: false,
+});
 
 export default function Home() {
-
-  const [editor, setEditor] = useState();
+  const [editor, setEditor] = useState(null);
 
   const onReady = (editor) => {
-    console.log('Editor loaded', editor);
     setEditor(editor);
   };
 
@@ -51,44 +47,26 @@ export default function Home() {
 
   return (
     <>
-      
       <Navbar />
       <Header />
       <main className="flex h-screen flex-col justify-between p-5 gap-2">
-      <div className="p-1 flex gap-5">
-        <div className="font-bold">SDK example Next.js</div>
-        <button className="border rounded px-2" onClick={getProjetData}>
-          Log Project Data
-        </button>
-        <button className="border rounded px-2" onClick={getExportData}>
-          Log HTML/CSS
-        </button>
-      </div>
-      <div className="flex-1 w-full h-full overflow-hidden">
-        <GrapesJsStudio
-          onReady={onReady}
-          options={{
-            licenseKey: '68b983ed4c974400957bc5cd860c662bf8b62bf2c7cd4b558e7ce6c4274df4fe',
-            project: {
-              default: {
-                pages: [
-                  {
-                    name: 'Home',
-                    component: `<h1 style="padding: 2rem; text-align: center">
-                      Hello Studio 👋
-                    </h1>`,
-                  },
-                ],
-              },
-            },
-          }}
-        />
-      </div>
-    </main>
+        <div className="p-1 flex gap-5">
+          <div className="font-bold">SDK example Next.js</div>
+          <button className="border rounded px-2" onClick={getProjetData}>
+            Log Project Data
+          </button>
+          <button className="border rounded px-2" onClick={getExportData}>
+            Log HTML/CSS
+          </button>
+        </div>
+        <div className="flex-1 w-full h-full overflow-hidden">
+          <GrapesJsEditor onEditorReady={onReady} />
+        </div>
+      </main>
       <Videocontainer />
       <Container />
       <SecondContainer />
       <Footer />
-  </>
+    </>
   );
 }
