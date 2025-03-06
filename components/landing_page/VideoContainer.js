@@ -116,7 +116,7 @@ export default function Home() {
                 autosaveChanges: 100,
                 autosaveIntervalMs: 10000
               }
-            },
+            ,
             identity: {
               // TODO: replace with a unique id for your end users. e.g. an uuid
               id: 'UNIQUE_END_USER_ID'
