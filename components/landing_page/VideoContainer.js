@@ -1,13 +1,10 @@
 "use client"
 
-import GrapesJsStudio, {
-  StudioCommands,
-  ToastVariant,
-} from '@grapesjs/studio-sdk/react';
+import StudioEditor from '@grapesjs/studio-sdk/react';
+import '@grapesjs/studio-sdk/style';
 import { Code, FileText, Save } from 'lucide-react';
 import { useState } from 'react';
 
-import '@grapesjs/studio-sdk/style';
 
 export default function Home() {
   const [editor, setEditor] = useState();
@@ -85,7 +82,7 @@ export default function Home() {
       </header>
       
       <div className="flex-1 w-full overflow-hidden relative">
-        <GrapesJsStudio
+        <StudioEditor
           options={{
           licenseKey: '6474dfcb44a5452ebe4c66054bd3790ae34d0299a5d2435da48a8f4b1fd6ff99',
           theme: 'dark',
@@ -102,46 +99,35 @@ export default function Home() {
             autosaveIntervalMs: 10000
           },
             project: {
-              default: {
-                pages: [
-                  {
-                    name: 'Home',
-                    component: `<div style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
-                      <header style="text-align: center; margin-bottom: 3rem;">
-                        <h1 style="font-size: 2.5rem; color: #374151; margin-bottom: 1rem;">Welcome to WebCraft Studio</h1>
-                        <p style="font-size: 1.2rem; color: #6B7280; max-width: 600px; margin: 0 auto;">
-                          Build beautiful responsive websites with our drag-and-drop editor. No coding required!
-                        </p>
-                      </header>
-                      <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-                        <div style="background-color: #F3F4F6; padding: 2rem; border-radius: 0.5rem; text-align: center;">
-                          <h2 style="font-size: 1.5rem; color: #374151; margin-bottom: 1rem;">Drag & Drop</h2>
-                          <p style="color: #6B7280;">Build your website visually with our intuitive drag-and-drop interface.</p>
-                        </div>
-                        <div style="background-color: #F3F4F6; padding: 2rem; border-radius: 0.5rem; text-align: center;">
-                          <h2 style="font-size: 1.5rem; color: #374151; margin-bottom: 1rem;">Responsive</h2>
-                          <p style="color: #6B7280;">All designs automatically adapt to any screen size.</p>
-                        </div>
-                        <div style="background-color: #F3F4F6; padding: 2rem; border-radius: 0.5rem; text-align: center;">
-                          <h2 style="font-size: 1.5rem; color: #374151; margin-bottom: 1rem;">Export</h2>
-                          <p style="color: #6B7280;">Export clean HTML/CSS code ready for production.</p>
-                        </div>
-                      </section>
-                    </div>`,
-                  },
-                ],
+                      
+                type: 'web',
+                // TODO: replace with a unique id for your projects. e.g. an uuid
+                id: 'UNIQUE_PROJECT_ID'
               },
-            },
-            // Add more configuration options
-            canvas: {
-              styles: [
-                'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
-              ],
-            },
-            panels: {
-              defaults: {
-                stylePrefix: 'gjs-',
+              identity: {
+                // TODO: replace with a unique id for your end users. e.g. an uuid
+                id: 'UNIQUE_END_USER_ID'
+              },
+              assets: {
+                storageType: 'cloud'
+              },
+              storage: {
+                type: 'cloud',
+                autosaveChanges: 100,
+                autosaveIntervalMs: 10000
               }
+            },
+            identity: {
+              // TODO: replace with a unique id for your end users. e.g. an uuid
+              id: 'UNIQUE_END_USER_ID'
+            },
+            assets: {
+              storageType: 'cloud'
+            },
+            storage: {
+              type: 'cloud',
+              autosaveChanges: 100,
+              autosaveIntervalMs: 10000
             }
           }}
         />
