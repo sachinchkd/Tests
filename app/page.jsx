@@ -1,6 +1,7 @@
 "use client";
 
 import '@grapesjs/studio-sdk/style';
+import dynamic from 'next/dynamic';
 import { useState } from "react";
 import Container from "../components/landing_page/Container";
 import Footer from "../components/landing_page/Footer";
@@ -9,10 +10,11 @@ import Navbar from "../components/landing_page/Navbar";
 import SecondContainer from "../components/landing_page/SecondContainer";
 import Videocontainer from "../components/landing_page/VideoContainer";
 
-import GrapesJsStudio, {
-  StudioCommands,
-  ToastVariant,
-} from '@grapesjs/studio-sdk/react';
+const GrapesJsStudio = dynamic(
+  () => import('@grapesjs/studio-sdk/react').then((mod) => mod.default),
+  { ssr: false }
+);
+
 
 
 
