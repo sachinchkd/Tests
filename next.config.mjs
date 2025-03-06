@@ -1,11 +1,21 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    reactStrictMode: true,
-  webpack: (config) => {
-    return config;
-  },
-  // You might need to add transpilePackages
-  transpilePackages: ['@grapesjs/studio-sdk'],
-};
+// next.config.mjs
 
-export default nextConfig;
+const nextConfig = {
+    reactStrictMode: false,
+    // Use only transpilePackages and remove serverExternalPackages
+    transpilePackages: ['@grapesjs/studio-sdk'],
+    
+    // Add additional optimizations
+    swcMinify: false, // Disable minification if it causes problems
+    
+    // Add cache configuration
+    staticPageGenerationTimeout: 180,
+    
+    // Improve bundling
+    webpack: (config) => {
+      return config;
+    },
+  };
+  
+  export default nextConfig;
