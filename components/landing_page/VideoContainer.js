@@ -1,5 +1,6 @@
 'use client';
 
+import createStudioEditor from '@grapesjs/studio-sdk';
 import GrapesJsStudio, {
   StudioCommands,
   ToastVariant,
@@ -37,7 +38,30 @@ export default function Home() {
       showToast('log-html-css');
     }
   };
-
+  
+  createStudioEditor({
+    root: '#studio-editor',
+    licenseKey: '25603078c3f74b04a77a56021154bbe0b622640198374f838ead19b4b7b1336b',
+    theme: 'light',
+    project: {
+      type: 'web',
+      // TODO: replace with a unique id for your projects. e.g. an uuid
+      id: 'UNIQUE_PROJECT_ID'
+    },
+    identity: {
+      // TODO: replace with a unique id for your end users. e.g. an uuid
+      id: 'UNIQUE_END_USER_ID'
+    },
+    assets: {
+      storageType: 'cloud'
+    },
+    storage: {
+      type: 'cloud',
+      autosaveChanges: 100,
+      autosaveIntervalMs: 10000
+    }
+  });
+  
   return (
     <main className="flex h-screen flex-col justify-between p-5 gap-2">
       <div className="p-1 flex gap-5">
@@ -68,6 +92,8 @@ export default function Home() {
             },
           }}
         />
+
+
       </div>
     </main>
   );
