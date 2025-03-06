@@ -1,15 +1,14 @@
 "use client";
 
+import '@grapesjs/studio-sdk/style';
+import { useState } from "react";
 import Container from "../components/landing_page/Container";
 import Footer from "../components/landing_page/Footer";
 import Header from "../components/landing_page/Header";
 import Navbar from "../components/landing_page/Navbar";
 import SecondContainer from "../components/landing_page/SecondContainer";
 import Videocontainer from "../components/landing_page/VideoContainer";
-import '@grapesjs/studio-sdk/style';
-import { useState } from "react";
 
-import { Editor } from 'grapesjs';
 import GrapesJsStudio, {
   StudioCommands,
   ToastVariant,
@@ -19,7 +18,7 @@ import GrapesJsStudio, {
 
 export default function Home() {
 
-  const [editor, setEditor] = useState<Editor>();
+  const [editor, setEditor] = useState();
 
   const onReady = (editor) => {
     console.log('Editor loaded', editor);
