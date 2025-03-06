@@ -64,6 +64,7 @@ export default function Home() {
   
   return (
     <main className="flex h-screen flex-col justify-between p-5 gap-2">
+      <index/>
       <div className="p-1 flex gap-5">
         <div className="font-bold">WebHub Studio</div>
         <button className="border rounded px-2" onClick={getProjetData}>

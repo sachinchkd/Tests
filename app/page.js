@@ -11,6 +11,12 @@ export default function Home() {
     <div className="App">
     <Navbar />
     <Header />
+    <iframe
+      src="/webhub/html/index.html" // Ensure the file is in "public" folder
+      width="100%"
+      height="600px"
+      style={{ border: "none" }}
+    />
     <Videocontainer />
     <Container />
     <SecondContainer />

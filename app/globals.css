@@ -107,27 +107,7 @@ body {
   font-size: 12px;
 }
 
-.Videocontainer {
-  background-color: #ffcefe9e;
 
-  border-bottom: 3px solid #000000;
-}
-
-.Videocontainer img {
-  display: block;
-  padding: 40px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.Videocontainer h2 {
-  font-family: "Outfit";
-  font-weight: 700;
-  font-size: 35px;
-  padding: 25px;
-  color: #515f96;
-  text-align: center;
-}
 
 .container1 {
   background-color: #d9d9d911;
