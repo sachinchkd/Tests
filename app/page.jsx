@@ -18,7 +18,7 @@ import '@grapesjs/studio-sdk/style';
 
 export default function Home() {
 
-  const licenseKey = process.env.LICENSE_KEY;
+  
 
   const [editor, setEditor] = useState();
 
@@ -66,7 +66,7 @@ export default function Home() {
         <GrapesJsStudio
           onReady={onReady}
           options={{
-            licenseKey: licenseKey,
+            licenseKey: "68b983ed4c974400957bc5cd860c662bf8b62bf2c7cd4b558e7ce6c4274df4fe",
             project: {
               default: {
                 pages: [
